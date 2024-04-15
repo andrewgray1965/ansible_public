@@ -1,0 +1,14 @@
+---
+
+# usage: ansible-playbook --ask-pass bootstrap.yml
+# adds ansible user and sudoers etc required to run ansible
+
+- name: bootstrap the lab
+  gather_facts: false
+  become: false
+  remote_user: root
+  hosts: 
+    - host.papertrader.net
+  roles:
+    - ansible
+  
